@@ -1,4 +1,4 @@
-import { IAction, IAppState } from '../../types/app';
+import { Action, AppState } from '../../types/app';
 import { STORE_PERSON } from '../actions/actionTypes';
 
 const INITIAL_STATE = {
@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   person: {},
 };
 
-const appReducer = (state: IAppState = INITIAL_STATE, action: IAction) => {
+const appReducer = (state: AppState = INITIAL_STATE, action: Action) => {
   switch (action.type) {
     case STORE_PERSON:
       return {...state, person: action.payload.person};

@@ -1,7 +1,7 @@
 import axios, { AxiosPromise, AxiosResponse } from 'axios';
 import { call, put, takeLatest } from 'redux-saga/effects'
 import apiRoutes from '../../api/apiRoutes';
-import { IAction } from '../../types/app';
+import { Action } from '../../types/app';
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 /*
@@ -15,7 +15,7 @@ function* personWatcherSaga() {
 }
 
 // worker saga: will be fired on USER_FETCH_REQUESTED actions
-function* fetchPersonSaga(action: IAction) {
+function* fetchPersonSaga(action: Action) {
   try {
     const response: AxiosResponse = yield call(fetchPerson, action.payload.id);    
     // dispatch a success action to the store with the new person

@@ -1,6 +1,6 @@
-import { IState } from '../types/app';
+import { State } from '../types/app';
 
-const getPerson = (state: IState) => state.app.person;
+const getPerson = (state: State) => state.app.person;
 
 export default {
   getPerson

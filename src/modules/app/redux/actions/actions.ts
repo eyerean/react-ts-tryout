@@ -1,4 +1,4 @@
-import { IPerson } from '../../types/person';
+import { Person } from '../../types/person';
 import { STORE_PERSON } from './actionTypes';
 
 const fetchPerson = (id: string) => ({
@@ -8,7 +8,7 @@ const fetchPerson = (id: string) => ({
   type: "USER_FETCH_REQUESTED"
 });
 
-const storePerson = (person: IPerson) => ({
+const storePerson = (person: Person) => ({
   payload: {
     person
   },

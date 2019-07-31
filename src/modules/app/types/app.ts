@@ -1,13 +1,13 @@
-import { IPerson } from './person';
+import { Person } from './person';
 
-export interface IAction { type: string; payload: any };
+export interface Action { type: string; payload: any };
 
-export interface IAppState {
-  person: IPerson | any,
+export interface AppState {
+  person: Person | any,
   fetching: boolean,
   error?: string
 };
 
-export interface IState {
-  app: IAppState
+export interface State {
+  app: AppState
 };

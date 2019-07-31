@@ -4,25 +4,25 @@ import { Dispatch } from 'redux';
 import logo from 'src/assets/logo.svg';
 import actions from '../redux/actions/actions';
 import selectors from '../redux/selectors';
-import { IState } from '../types/app';
-import { IPerson } from '../types/person';
+import { State } from '../types/app';
+import { Person } from '../types/person';
 import './App.css';
 // import { History, Location } from 'history';
 // import { match } from 'react-router';
 
-interface IProps {
-  person: IPerson | any,
+interface Props {
+  person: Person | any,
   // history: History,
   // location: Location,
   // match: match,
   // staticContext: undefined
 }
 
-interface IActionProps {
+interface ActionProps {
   fetchPerson: (id: string) => { type: string; payload: { id: string; }; },
 }
 
-class App extends React.Component<IProps & IActionProps> {
+class App extends React.Component<Props & ActionProps> {
   public componentDidMount(){
     this.props.fetchPerson('2');
   }
@@ -45,11 +45,11 @@ class App extends React.Component<IProps & IActionProps> {
 }
 
 
-const mapStateToProps = (state: IState): IProps => ({
+const mapStateToProps = (state: State): Props => ({
   person: selectors.getPerson(state),
 });
 
-const mapDispatchToProps = (dispatch: Dispatch): IActionProps => ({
+const mapDispatchToProps = (dispatch: Dispatch): ActionProps => ({
   fetchPerson: (id: string) => dispatch(actions.fetchPerson(id))
 });
 
